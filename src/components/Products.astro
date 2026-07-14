@@ -17,10 +17,13 @@ import GridBackground from './ui/GridBackground.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {content.products.map((product) => (
         <GlowCard class="p-6 group">
-          <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
+          <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900/50 mb-4">
+            <img
+              src={product.image}
+              alt={product.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
           </div>
 
           <h3 class="text-lg font-semibold mb-2">{product.title}</h3>

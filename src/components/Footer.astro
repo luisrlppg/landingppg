@@ -6,9 +6,7 @@ import content from '../data/content.json';
   <div class="section-container">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-          <span class="text-accent font-bold text-sm">PP</span>
-        </div>
+        <img src="/ppg.jpg" alt="Plásticos Plasa" class="h-8 w-8 rounded-lg object-cover" />
         <div>
           <span class="font-semibold text-lg tracking-tight">{content.company.name}</span>
           <p class="text-xs text-zinc-600">{content.footer.tagline}</p>
@@ -27,7 +25,7 @@ import content from '../data/content.json';
       </div>
 
       <p class="text-sm text-zinc-600">
-        {content.footer.copyright}
+        © {new Date().getFullYear()} {content.company.fullName}. Todos los derechos reservados.
       </p>
     </div>
   </div>

@@ -15,7 +15,7 @@
   ],
   "hero": {
     "title": "Envases cosméticos que elevan tu marca",
-    "subtitle": "Más de 45 años fabricando envases y herramientas de maquillaje con acabados impecables. Explora nuestra línea de productos o diseña la solución perfecta para tu marca.",
+    "subtitle": "Más de 50 años fabricando envases y herramientas de maquillaje con acabados impecables. Explora nuestra línea de productos o diseña la solución perfecta para tu marca.",
     "cta": "Ver productos",
     "ctaSecondary": "Solicitar cotización"
   },
@@ -76,7 +76,7 @@
     ],
     "stats": [
       { "value": "1976", "label": "Fundada en Guadalajara" },
-      { "value": "45+", "label": "Años de experiencia" },
+      { "value": "50+", "label": "Años de experiencia" },
       { "value": "500+", "label": "Clientes satisfechos" },
       { "value": "1000+", "label": "Productos desarrollados" }
     ]
@@ -158,8 +158,7 @@
     "instagram": "https://instagram.com/plasticosplasa"
   },
   "footer": {
-    "copyright": "© 2025 Plásticos Plasa de Guadalajara S.A. de C.V. Todos los derechos reservados.",
-    "tagline": "Más de 45 años a tu servicio",
+    "tagline": "Más de 50 años a tu servicio",
     "links": [
       { "label": "Política de Privacidad", "href": "#" },
       { "label": "Términos y Condiciones", "href": "#" }
