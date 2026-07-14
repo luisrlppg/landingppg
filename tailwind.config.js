@@ -11,7 +11,7 @@ export default {
         accent: {
           DEFAULT: '#818cf8',
           hover: '#6366f1',
-          glow: '#a78bfa',
+          glow: '#a5b4fc',
         },
       },
       fontFamily: {

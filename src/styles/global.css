@@ -40,7 +40,7 @@
     background: linear-gradient(
       135deg,
       rgba(129, 140, 248, 0.3),
-      rgba(167, 139, 250, 0.1),
+      rgba(165, 180, 252, 0.1),
       rgba(129, 140, 248, 0.05),
       transparent
     );
@@ -63,7 +63,7 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #818cf8, #a78bfa, #c4b5fd);
+    background-image: linear-gradient(135deg, #818cf8, #a5b4fc, #c7d2fe);
   }
 }
 
