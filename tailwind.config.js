@@ -9,9 +9,9 @@ export default {
           light: '#27272a',
         },
         accent: {
-          DEFAULT: '#818cf8',
-          hover: '#6366f1',
-          glow: '#a5b4fc',
+          DEFAULT: '#60a5fa',
+          hover: '#3b82f6',
+          glow: '#93c5fd',
         },
       },
       fontFamily: {
