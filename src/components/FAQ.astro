@@ -1,0 +1,63 @@
+---
+import content from '../data/content.json';
+import SectionHeader from './ui/SectionHeader.astro';
+import GridBackground from './ui/GridBackground.astro';
+---
+
+<section id="faq" class="relative py-32 overflow-hidden">
+  <GridBackground />
+
+  <div class="section-container relative z-10">
+    <SectionHeader
+      title="Preguntas Frecuentes"
+      subtitle="Resolvemos tus dudas sobre nuestros productos y servicios."
+    />
+
+    <div class="max-w-3xl mx-auto">
+      {content.faq.map((item, i) => (
+        <div class="border-b border-zinc-800/50">
+          <button
+            class="faq-toggle w-full flex items-center justify-between py-6 text-left group"
+            data-index={i}
+          >
+            <span class="text-lg font-medium text-zinc-200 group-hover:text-white transition-colors pr-4">
+              {item.question}
+            </span>
+            <svg
+              class="w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden pb-6">
+            <p class="text-zinc-400 text-sm leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+
+      document.querySelectorAll('.faq-answer').forEach((el) => {
+        if (el !== answer) el.classList.add('hidden');
+      });
+      document.querySelectorAll('.faq-toggle svg').forEach((svg) => {
+        if (svg !== icon) svg.style.transform = 'rotate(0deg)';
+      });
+
+      answer?.classList.toggle('hidden');
+      if (icon) {
+        icon.style.transform = answer?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      }
+    });
+  });
+</script>

@@ -1,0 +1,145 @@
+{
+  "company": {
+    "name": "Plásticos Plasa",
+    "tagline": "Envases y herramientas cosméticas de alta calidad",
+    "description": "Más de 20 años fabricando envases premium y herramientas de maquillaje para las principales marcas cosméticas de Latinoamérica."
+  },
+  "nav": [
+    { "label": "Productos", "href": "#productos" },
+    { "label": "Nosotros", "href": "#nosotros" },
+    { "label": "Proceso", "href": "#proceso" },
+    { "label": "Testimonios", "href": "#testimonios" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "hero": {
+    "title": "Diseñamos envases que elevan tu marca cosmética",
+    "subtitle": "Fabricamos envases premium y herramientas de maquillaje con acabados impecables. Desde el diseño hasta la entrega, creamos soluciones que hacen que tu producto destaque.",
+    "cta": "Explorar productos",
+    "ctaSecondary": "Solicitar cotización"
+  },
+  "products": [
+    {
+      "title": "Envases para Skincare",
+      "description": "Frascos, tarros y dispensadores con acabados en vidrio y plástico de alta calidad.",
+      "icon": "droplet",
+      "image": "/images/placeholder-skincare.jpg"
+    },
+    {
+      "title": "Envases para Maquillaje",
+      "description": "Base, labial, compactos y contenedores personalizados para tu línea de maquillaje.",
+      "icon": "palette",
+      "image": "/images/placeholder-makeup.jpg"
+    },
+    {
+      "title": "Brushes y Herramientas",
+      "description": "Brochas, esponjas y accesorios de profesional con materiales premium.",
+      "icon": "brush",
+      "image": "/images/placeholder-brushes.jpg"
+    },
+    {
+      "title": "Envases Travel Size",
+      "description": "Formatos compactos y portátiles perfectos para kits de viaje y muestras.",
+      "icon": "plane",
+      "image": "/images/placeholder-travel.jpg"
+    },
+    {
+      "title": "Tubos y Envases Flexibles",
+      "description": "Tubos extruidos con impresión de alta resolución y cierres herméticos.",
+      "icon": "tube",
+      "image": "/images/placeholder-tubes.jpg"
+    },
+    {
+      "title": "Accesorios y Cierres",
+      "description": "Tapones, bombas, atomizadores y componentes para completar tu envase.",
+      "icon": "cog",
+      "image": "/images/placeholder-accessories.jpg"
+    }
+  ],
+  "about": {
+    "title": "Más de dos décadas creando soluciones cosméticas",
+    "description": "En Plásticos Plasa combinamos tecnología de vanguardia con artesanía cuidadosa. Cada envase que fabricamos refleja nuestro compromiso con la calidad, la innovación y la satisfacción total de nuestros clientes.",
+    "stats": [
+      { "value": "20+", "label": "Años de experiencia" },
+      { "value": "500+", "label": "Clientes satisfechos" },
+      { "value": "1000+", "label": "Productos desarrollados" },
+      { "value": "98%", "label": "Tasa de satisfacción" }
+    ]
+  },
+  "process": [
+    {
+      "step": 1,
+      "title": "Diseño & Prototipado",
+      "description": "Trabajamos contigo para crear el envase perfecto. Renderizado 3D y prototipos antes de la producción."
+    },
+    {
+      "step": 2,
+      "title": "Inyección & Moldeo",
+      "description": "Producción con maquinaria de última generación y materiales certificados de alta calidad."
+    },
+    {
+      "step": 3,
+      "title": "Acabado & Personalización",
+      "description": "Impresión, serigrafía, metallizado y acabados especiales que hacen único a tu producto."
+    },
+    {
+      "step": 4,
+      "title": "Control de Calidad",
+      "description": "Cada pieza pasa por rigurosos controles para garantizar la perfección en cada envase."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "María Fernández",
+      "company": "BeautyGlow Cosmetics",
+      "quote": "Plásticos Plasa transformó nuestra línea de productos. La calidad de los envases superó todas nuestras expectativas."
+    },
+    {
+      "name": "Carlos Mendoza",
+      "company": "NaturaSkin",
+      "quote": "Llevamos 5 años trabajando con ellos. Su capacidad de innovación y cumplimiento es excepcional."
+    },
+    {
+      "name": "Laura Vega",
+      "company": "Studio Makeup Pro",
+      "quote": "Los brushes que fabrican para nosotros son de calidad profesional. Nuestros clientes notan la diferencia."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Cuál es el pedido mínimo?",
+      "question": "¿Cuál es el mínimo de pedido?",
+      "answer": "El mínimo varía según el producto. Contacta con nuestro equipo para información específica sobre tu requerimiento."
+    },
+    {
+      "question": "¿Ofrecen diseño personalizado?",
+      "answer": "Sí, contamos con un equipo de diseño que trabaja contigo desde la conceptualización hasta el prototipo final."
+    },
+    {
+      "question": "¿Cuál es el tiempo de entrega?",
+      "answer": "Los tiempos estándar son de 4 a 6 semanas dependiendo del volumen y la complejidad del producto."
+    },
+    {
+      "question": "¿Trabajan con marcas pequeñas?",
+      "answer": "Absolutamente. Trabajamos con marcas de todos los tamaños, desde emprendedores hasta grandes corporaciones."
+    },
+    {
+      "question": "¿Los materiales son certificados?",
+      "answer": "Sí, todos nuestros materiales cuentan con certificaciones de calidad y cumplimiento normativo internacional."
+    }
+  ],
+  "contact": {
+    "title": "¿Listo para crear tu próximo envase?",
+    "subtitle": "Cuéntanos tu proyecto y te ofreceremos una cotización personalizada en menos de 24 horas.",
+    "email": "ventas@plasticosplasa.com",
+    "phone": "+52 (55) 1234-5678",
+    "address": "Av. Industrial 1234, Col. Centro, CDMX, México"
+  },
+  "footer": {
+    "copyright": "© 2025 Plásticos Plasa. Todos los derechos reservados.",
+    "links": [
+      { "label": "Política de Privacidad", "href": "#" },
+      { "label": "Términos y Condiciones", "href": "#" }
+    ]
+  }
+}
