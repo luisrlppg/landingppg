@@ -1,0 +1,160 @@
+{
+  "company": {
+    "name": "Tu Empresa",
+    "fullName": "Tu Empresa S.A. de C.V.",
+    "tagline": "Tu tagline o slogan aquí",
+    "description": "Descripción breve de tu empresa y lo que haces."
+  },
+  "nav": [
+    { "label": "Productos", "href": "#productos" },
+    { "label": "Nosotros", "href": "#nosotros" },
+    { "label": "Proceso", "href": "#proceso" },
+    { "label": "Testimonios", "href": "#testimonios" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "hero": {
+    "title": "Tu título principal aquí",
+    "subtitle": "Descripción de tu empresa y lo que ofreces. Sé claro y directo sobre el valor que proporcionas a tus clientes.",
+    "cta": "Ver productos",
+    "ctaSecondary": "Contactar"
+  },
+  "products": [
+    {
+      "title": "Producto 1",
+      "description": "Descripción breve del primer producto o servicio.",
+      "icon": "droplet",
+      "image": "/images/placeholder-1.jpg"
+    },
+    {
+      "title": "Producto 2",
+      "description": "Descripción breve del segundo producto o servicio.",
+      "icon": "palette",
+      "image": "/images/placeholder-2.jpg"
+    },
+    {
+      "title": "Producto 3",
+      "description": "Descripción breve del tercer producto o servicio.",
+      "icon": "sparkles",
+      "image": "/images/placeholder-3.jpg"
+    },
+    {
+      "title": "Producto 4",
+      "description": "Descripción breve del cuarto producto o servicio.",
+      "icon": "brush",
+      "image": "/images/placeholder-4.jpg"
+    },
+    {
+      "title": "Producto 5",
+      "description": "Descripción breve del quinto producto o servicio.",
+      "icon": "tube",
+      "image": "/images/placeholder-5.jpg"
+    },
+    {
+      "title": "Producto 6",
+      "description": "Descripción breve del sexto producto o servicio.",
+      "icon": "cog",
+      "image": "/images/placeholder-6.jpg"
+    }
+  ],
+  "about": {
+    "title": "Sobre nosotros",
+    "description": "Descripción detallada de tu empresa, su historia, misión y lo que la hace única.",
+    "features": [
+      {
+        "title": "Característica 1",
+        "description": "Descripción de esta característica o servicio."
+      },
+      {
+        "title": "Característica 2",
+        "description": "Descripción de esta característica o servicio."
+      },
+      {
+        "title": "Característica 3",
+        "description": "Descripción de esta característica o servicio."
+      }
+    ],
+    "stats": [
+      { "value": "2020", "label": "Fundada" },
+      { "value": "100+", "label": "Clientes" },
+      { "value": "50+", "label": "Proyectos" },
+      { "value": "99%", "label": "Satisfacción" }
+    ]
+  },
+  "process": [
+    {
+      "step": 1,
+      "title": "Paso 1",
+      "description": "Descripción del primer paso de tu proceso."
+    },
+    {
+      "step": 2,
+      "title": "Paso 2",
+      "description": "Descripción del segundo paso de tu proceso."
+    },
+    {
+      "step": 3,
+      "title": "Paso 3",
+      "description": "Descripción del tercer paso de tu proceso."
+    },
+    {
+      "step": 4,
+      "title": "Paso 4",
+      "description": "Descripción del cuarto paso de tu proceso."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Nombre del Cliente",
+      "company": "Empresa del Cliente",
+      "quote": "Testimonio del cliente sobre tu producto o servicio."
+    },
+    {
+      "name": "Nombre del Cliente 2",
+      "company": "Empresa del Cliente 2",
+      "quote": "Otro testimonio de un cliente satisfecho."
+    },
+    {
+      "name": "Nombre del Cliente 3",
+      "company": "Empresa del Cliente 3",
+      "quote": "Un tercer testimonio para completar la sección."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Pregunta frecuente 1?",
+      "answer": "Respuesta a la primera pregunta frecuente."
+    },
+    {
+      "question": "¿Pregunta frecuente 2?",
+      "answer": "Respuesta a la segunda pregunta frecuente."
+    },
+    {
+      "question": "¿Pregunta frecuente 3?",
+      "answer": "Respuesta a la tercera pregunta frecuente."
+    },
+    {
+      "question": "¿Pregunta frecuente 4?",
+      "answer": "Respuesta a la cuarta pregunta frecuente."
+    }
+  ],
+  "contact": {
+    "title": "¿Listo para trabajar juntos?",
+    "subtitle": "Cuéntanos tu proyecto y te ofreceremos la mejor solución.",
+    "email": "contacto@tuempresa.com",
+    "phone": "+52 (55) 1234-5678",
+    "address": "Tu dirección completa aquí",
+    "hours": "Lunes - Viernes: 9:00 am - 6:00 pm",
+    "whatsapp": "5215512345678",
+    "whatsappMessage": "Hola, me interesa conocer más sobre sus productos y servicios.",
+    "instagram": "https://instagram.com/tuempresa"
+  },
+  "footer": {
+    "copyright": "© 2025 Tu Empresa. Todos los derechos reservados.",
+    "tagline": "Tu slogan aquí",
+    "links": [
+      { "label": "Política de Privacidad", "href": "#" },
+      { "label": "Términos y Condiciones", "href": "#" }
+    ]
+  }
+}

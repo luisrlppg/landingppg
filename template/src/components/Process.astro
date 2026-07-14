@@ -1,0 +1,40 @@
+---
+import content from '../data/content.json';
+import SectionHeader from './ui/SectionHeader.astro';
+import GridBackground from './ui/GridBackground.astro';
+---
+
+<section id="proceso" class="relative py-32 overflow-hidden">
+  <GridBackground />
+
+  <div class="section-container relative z-10">
+    <SectionHeader
+      title="Nuestro Proceso"
+      subtitle="De la idea al envase final, un proceso riguroso que garantiza la excelencia."
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {content.process.map((step, i) => (
+        <div class="relative">
+          <div class="relative rounded-card bg-surface/50 border-gradient p-6 h-full">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
+                {String(step.step).padStart(2, '0')}
+              </div>
+              {i < content.process.length - 1 && (
+                <div class="hidden lg:block flex-1 h-px bg-gradient-to-r from-accent/30 to-transparent"></div>
+              )}
+            </div>
+
+            <h3 class="text-lg font-semibold mb-2">{step.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
+          </div>
+
+          {i < content.process.length - 1 && (
+            <div class="hidden md:block lg:hidden absolute top-1/2 -right-3 w-6 h-px bg-accent/30"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

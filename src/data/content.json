@@ -1,8 +1,9 @@
 {
   "company": {
     "name": "Plásticos Plasa",
-    "tagline": "Envases y herramientas cosméticas de alta calidad",
-    "description": "Más de 20 años fabricando envases premium y herramientas de maquillaje para las principales marcas cosméticas de Latinoamérica."
+    "fullName": "Plásticos Plasa de Guadalajara S.A. de C.V.",
+    "tagline": "Especialistas en partes plásticas para cosméticos",
+    "description": "Desde 1976 fabricamos envases premium y herramientas de maquillaje para las principales marcas cosméticas de Latinoamérica."
   },
   "nav": [
     { "label": "Productos", "href": "#productos" },
@@ -13,79 +14,93 @@
     { "label": "Contacto", "href": "#contacto" }
   ],
   "hero": {
-    "title": "Diseñamos envases que elevan tu marca cosmética",
-    "subtitle": "Fabricamos envases premium y herramientas de maquillaje con acabados impecables. Desde el diseño hasta la entrega, creamos soluciones que hacen que tu producto destaque.",
-    "cta": "Explorar productos",
+    "title": "Envases cosméticos que elevan tu marca",
+    "subtitle": "Más de 45 años fabricando envases y herramientas de maquillaje con acabados impecables. Explora nuestra línea de productos o diseña la solución perfecta para tu marca.",
+    "cta": "Ver productos",
     "ctaSecondary": "Solicitar cotización"
   },
   "products": [
     {
-      "title": "Envases para Skincare",
-      "description": "Frascos, tarros y dispensadores con acabados en vidrio y plástico de alta calidad.",
+      "title": "Rimel y Máscara de Pestañas",
+      "description": "Envases completos con vastago y pincel incluidos. Diversos tamaños y acabados para tu línea de rimel.",
       "icon": "droplet",
-      "image": "/images/placeholder-skincare.jpg"
+      "image": "/images/placeholder-rimel.jpg"
     },
     {
-      "title": "Envases para Maquillaje",
-      "description": "Base, labial, compactos y contenedores personalizados para tu línea de maquillaje.",
+      "title": "Lip Gloss y Labial",
+      "description": "Envases para lip gloss, delineador y productos de labios con cierres herméticos y acabados premium.",
       "icon": "palette",
-      "image": "/images/placeholder-makeup.jpg"
+      "image": "/images/placeholder-labial.jpg"
     },
     {
-      "title": "Brushes y Herramientas",
-      "description": "Brochas, esponjas y accesorios de profesional con materiales premium.",
+      "title": "Esmalte y Cuidado de Uñas",
+      "description": "Botellas y envases para esmalte con taparrosca y tapadera de alta precisión.",
+      "icon": "sparkles",
+      "image": "/images/placeholder-esmalte.jpg"
+    },
+    {
+      "title": "Brochas y Brushes",
+      "description": "Brochas profesionales de maquillaje con materiales de alta calidad y diseños personalizados.",
       "icon": "brush",
       "image": "/images/placeholder-brushes.jpg"
     },
     {
-      "title": "Envases Travel Size",
-      "description": "Formatos compactos y portátiles perfectos para kits de viaje y muestras.",
-      "icon": "plane",
-      "image": "/images/placeholder-travel.jpg"
-    },
-    {
-      "title": "Tubos y Envases Flexibles",
-      "description": "Tubos extruidos con impresión de alta resolución y cierres herméticos.",
+      "title": "Botellas y Envases Flexibles",
+      "description": "Botellas clásicas y artículos desechables para el sector profesional. Inyección, extrusión y soplado.",
       "icon": "tube",
-      "image": "/images/placeholder-tubes.jpg"
+      "image": "/images/placeholder-botellas.jpg"
     },
     {
-      "title": "Accesorios y Cierres",
-      "description": "Tapones, bombas, atomizadores y componentes para completar tu envase.",
+      "title": "Tapones, Cierres y Accesorios",
+      "description": "Taparrosca, tapadera, bombas, atomizadores y cualquier tipo de tapa o cubierta técnica.",
       "icon": "cog",
-      "image": "/images/placeholder-accessories.jpg"
+      "image": "/images/placeholder-cierres.jpg"
     }
   ],
   "about": {
-    "title": "Más de dos décadas creando soluciones cosméticas",
-    "description": "En Plásticos Plasa combinamos tecnología de vanguardia con artesanía cuidadosa. Cada envase que fabricamos refleja nuestro compromiso con la calidad, la innovación y la satisfacción total de nuestros clientes.",
+    "title": "Fabricantes estratégicos del sector cosmético",
+    "description": "En Plásticos Plasa de Guadalajara, nos consolidamos como un fabricante y proveedor estratégico de soluciones globales en el sector cosmético. Nuestra pasión por la belleza se une a la precisión técnica para ofrecer soluciones de empaque que definen marcas a nivel internacional.",
+    "features": [
+      {
+        "title": "Ingeniería de Moldes",
+        "description": "Diseño, fabricación y mantenimiento de moldes de inyección de alta precisión para garantizar piezas uniformes."
+      },
+      {
+        "title": "Prototipado e Innovación",
+        "description": "Impresión 3D en etapas de diseño inicial para que valides conceptos antes de la producción masiva."
+      },
+      {
+        "title": "Transformación Versátil",
+        "description": "Procesos de inyección, extrusión, soplado e impresión decorativa para personalizar cada detalle."
+      }
+    ],
     "stats": [
-      { "value": "20+", "label": "Años de experiencia" },
+      { "value": "1976", "label": "Fundada en Guadalajara" },
+      { "value": "45+", "label": "Años de experiencia" },
       { "value": "500+", "label": "Clientes satisfechos" },
-      { "value": "1000+", "label": "Productos desarrollados" },
-      { "value": "98%", "label": "Tasa de satisfacción" }
+      { "value": "1000+", "label": "Productos desarrollados" }
     ]
   },
   "process": [
     {
       "step": 1,
       "title": "Diseño & Prototipado",
-      "description": "Trabajamos contigo para crear el envase perfecto. Renderizado 3D y prototipos antes de la producción."
+      "description": "Trabajamos contigo para crear el envase perfecto. Renderizado 3D e impresión 3D para validar antes de producir."
     },
     {
       "step": 2,
       "title": "Inyección & Moldeo",
-      "description": "Producción con maquinaria de última generación y materiales certificados de alta calidad."
+      "description": "Producción con moldes de alta precisión y maquinaria de última generación para piezas uniformes."
     },
     {
       "step": 3,
-      "title": "Acabado & Personalización",
-      "description": "Impresión, serigrafía, metallizado y acabados especiales que hacen único a tu producto."
+      "title": "Extrusión & Soplado",
+      "description": "Procesos versátiles de extrusión y soplado para botellas y envases flexibles de alta calidad."
     },
     {
       "step": 4,
-      "title": "Control de Calidad",
-      "description": "Cada pieza pasa por rigurosos controles para garantizar la perfección en cada envase."
+      "title": "Acabado & Entrega",
+      "description": "Impresión decorativa, serigrafía, metallizado y control de calidad riguroso antes de la entrega."
     }
   ],
   "testimonials": [
@@ -108,12 +123,11 @@
   "faq": [
     {
       "question": "¿Cuál es el pedido mínimo?",
-      "question": "¿Cuál es el mínimo de pedido?",
-      "answer": "El mínimo varía según el producto. Contacta con nuestro equipo para información específica sobre tu requerimiento."
+      "answer": "El mínimo varía según el producto y el tipo de envase. Contacta con nuestro equipo para información específica sobre tu requerimiento."
     },
     {
-      "question": "¿Ofrecen diseño personalizado?",
-      "answer": "Sí, contamos con un equipo de diseño que trabaja contigo desde la conceptualización hasta el prototipo final."
+      "question": "¿Pueden diseñar envases personalizados?",
+      "answer": "Sí, contamos con ingeniería de moldes propia, prototipado con impresión 3D y diseño personalizado desde la conceptualización hasta el prototipo final."
     },
     {
       "question": "¿Cuál es el tiempo de entrega?",
@@ -124,19 +138,28 @@
       "answer": "Absolutamente. Trabajamos con marcas de todos los tamaños, desde emprendedores hasta grandes corporaciones."
     },
     {
-      "question": "¿Los materiales son certificados?",
-      "answer": "Sí, todos nuestros materiales cuentan con certificaciones de calidad y cumplimiento normativo internacional."
+      "question": "¿Qué procesos de fabricación manejan?",
+      "answer": "Manejamos inyección, extrusión, soplado e impresión decorativa. Dominamos las técnicas más avanzadas de transformación de plástico."
+    },
+    {
+      "question": "¿Tienen catálogo de productos disponibles?",
+      "answer": "Sí, contamos con una amplia línea de envases estándar para rimel, lip gloss, esmalte y más. Solicita nuestro catálogo por WhatsApp o correo."
     }
   ],
   "contact": {
-    "title": "¿Listo para crear tu próximo envase?",
-    "subtitle": "Cuéntanos tu proyecto y te ofreceremos una cotización personalizada en menos de 24 horas.",
-    "email": "ventas@plasticosplasa.com",
-    "phone": "+52 (55) 1234-5678",
-    "address": "Av. Industrial 1234, Col. Centro, CDMX, México"
+    "title": "¿Listo para llevar tu marca al siguiente nivel?",
+    "subtitle": "Nuestro equipo está preparado para desarrollar la solución perfecta para tus productos cosméticos. Te acompañamos en cada paso.",
+    "email": "contacto@plasticosplasa.com",
+    "phone": "(33) 3651-5424",
+    "address": "Florentino Acosta No. 1090, Sector Libertad, 44370 Guadalajara, Jalisco, México",
+    "hours": "Lunes - Viernes: 9:00 am - 2:00 pm y 4:00 pm - 6:00 pm",
+    "whatsapp": "+523343292726",
+    "whatsappMessage": "Hola, me interesa conocer más sobre sus productos y servicios de envases plásticos para cosméticos.",
+    "instagram": "https://instagram.com/plasticosplasa"
   },
   "footer": {
-    "copyright": "© 2025 Plásticos Plasa. Todos los derechos reservados.",
+    "copyright": "© 2025 Plásticos Plasa de Guadalajara S.A. de C.V. Todos los derechos reservados.",
+    "tagline": "Más de 45 años a tu servicio",
     "links": [
       { "label": "Política de Privacidad", "href": "#" },
       { "label": "Términos y Condiciones", "href": "#" }
