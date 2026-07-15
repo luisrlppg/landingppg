@@ -33,7 +33,7 @@ import GridBackground from './ui/GridBackground.astro';
             </svg>
           </button>
           <div class="faq-answer hidden pb-6">
-            <p class="text-zinc-400 text-sm leading-relaxed">{item.answer}</p>
+            <p class="text-zinc-400 text-sm leading-relaxed" set:html={item.answer}></p>
           </div>
         </div>
       ))}
