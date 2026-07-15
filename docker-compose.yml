@@ -8,10 +8,4 @@ services:
       - "0.0.0.0:3000:80"
     environment:
       - TZ=America/Mexico_City
-    networks:
-      - ppg-network
     restart: unless-stopped
-
-networks:
-  ppg-network:
-    external: true
