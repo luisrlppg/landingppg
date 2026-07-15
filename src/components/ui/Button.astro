@@ -19,10 +19,12 @@ const variants = {
 };
 
 const Tag = href ? 'a' : 'button';
+const isExternal = href?.startsWith('http');
 ---
 
 <Tag
   href={href}
+  {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
   class:list={[baseClasses, variants[variant], className]}
 >
   <slot />
