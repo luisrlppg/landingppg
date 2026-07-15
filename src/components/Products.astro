@@ -3,6 +3,7 @@ import content from '../data/content.json';
 import GlowCard from './ui/GlowCard.astro';
 import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
+import Button from './ui/Button.astro';
 ---
 
 <section id="productos" class="relative py-32 overflow-hidden">
@@ -36,6 +37,15 @@ import GridBackground from './ui/GridBackground.astro';
           </div>
         </GlowCard>
       ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <Button href="https://plasticosplasa.ventaenlinea.store" variant="primary" class="text-lg px-8 py-4">
+        Escoge tus productos para tu cotización
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </Button>
     </div>
   </div>
 </section>
