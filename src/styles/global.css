@@ -11,7 +11,7 @@
 
   body {
     @apply bg-black text-zinc-50 font-sans;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   input, textarea, select {
