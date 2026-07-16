@@ -12,6 +12,19 @@ const {
   title = `${content.company.name} — ${content.company.tagline}`,
   description = content.company.description,
 } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": content.faq.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer.replace(/<[^>]*>/g, ''),
+    },
+  })),
+};
 ---
 
 <!DOCTYPE html>
@@ -20,11 +33,77 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={`${content.company.name} — ${content.company.tagline}`} />
+    <meta property="og:description" content={content.company.description} />
+    <meta property="og:image" content="https://plasticosplasa.net/ppg.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plasticosplasa.net/" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${content.company.name} — ${content.company.tagline}`} />
+    <meta name="twitter:description" content={content.company.description} />
+    <meta name="twitter:image" content="https://plasticosplasa.net/ppg.jpg" />
     <title>{title}</title>
     <link rel="icon" type="image/jpeg" href="/ppg.jpg" />
+    <link rel="canonical" href="https://plasticosplasa.net/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": content.company.name,
+      "url": "https://plasticosplasa.net/",
+      "description": content.company.description,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": content.company.fullName,
+      "url": "https://plasticosplasa.net/",
+      "logo": "https://plasticosplasa.net/ppg.jpg",
+      "description": content.company.description,
+      "image": "https://plasticosplasa.net/images/placeholder-planta.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Florentino Acosta No. 1090, Sector Libertad",
+        "addressLocality": "Guadalajara",
+        "addressRegion": "Jalisco",
+        "postalCode": "44370",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.6597",
+        "longitude": "-103.3496"
+      },
+      "telephone": "+523336515424",
+      "email": content.contact.email,
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        content.contact.instagram
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
   <body class="min-h-screen">
     <slot />
     <WhatsAppButton />
+    <script is:inline src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80,
+      });
+    </script>
   </body>
 </html>

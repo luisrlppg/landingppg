@@ -4,7 +4,7 @@ import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
 ---
 
-<section id="proceso" class="relative py-32 overflow-hidden">
+<section id="proceso" class="relative py-16 md:py-32 overflow-hidden">
   <GridBackground />
 
   <div class="section-container relative z-10">
@@ -13,9 +13,9 @@ import GridBackground from './ui/GridBackground.astro';
       subtitle="De la idea al envase final, un proceso riguroso que garantiza la excelencia."
     />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {content.process.map((step, i) => (
-        <div class="relative">
+        <div class="relative" data-aos="fade-up" data-aos-delay={String(i * 100)}>
           <div class="relative rounded-card bg-surface/50 border-gradient p-6 h-full">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">

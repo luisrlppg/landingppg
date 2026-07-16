@@ -22,37 +22,37 @@
   "products": [
     {
       "title": "Rimel y Máscara de Pestañas",
-      "description": "Envases completos con vastago y pincel incluidos. Diversos tamaños y acabados para tu línea de rimel.",
+      "description": "Envases completos con vastago, cepillo y wiper incluidos. Diversos colores y combinaciones.",
       "icon": "droplet",
       "image": "/images/placeholder-rimel.jpg"
     },
     {
       "title": "Lip Gloss y Labial",
-      "description": "Envases para lip gloss, delineador y productos de labios con cierres herméticos y acabados premium.",
+      "description": "Envases para lip gloss con diversifica tus colores, incluye tu marca en ellos.",
       "icon": "palette",
       "image": "/images/placeholder-labial.jpg"
     },
     {
       "title": "Esmalte y Cuidado de Uñas",
-      "description": "Botellas y envases para esmalte con taparrosca y tapadera de alta precisión.",
+      "description": "Tapaderas y brochas para esmalte, personaliza el color y encuentra la medida que requieres para tu frasco.",
       "icon": "sparkles",
       "image": "/images/placeholder-esmalte.jpg"
     },
     {
-      "title": "Brochas y Brushes",
+      "title": "Brochas y Cepillos",
       "description": "Brochas profesionales de maquillaje con materiales de alta calidad y diseños personalizados.",
       "icon": "brush",
       "image": "/images/placeholder-brushes.jpg"
     },
     {
-      "title": "Botellas y Envases Flexibles",
-      "description": "Botellas clásicas y artículos desechables para el sector profesional. Inyección, extrusión y soplado.",
+      "title": "Juegos de Delineador",
+      "description": "Envases completos con vastago, punta delineadora y wiper incluidos. Tamaños y acabados personalizados para tu línea.",
       "icon": "tube",
       "image": "/images/placeholder-botellas.jpg"
     },
     {
       "title": "Tapones, Cierres y Accesorios",
-      "description": "Taparrosca, tapadera, bombas, atomizadores y cualquier tipo de tapa o cubierta técnica.",
+      "description": "Taparrosca, tapadera, bombas, cualquier tipo de tapa o cubierta.",
       "icon": "cog",
       "image": "/images/placeholder-cierres.jpg"
     }
@@ -84,22 +84,17 @@
   "process": [
     {
       "step": 1,
-      "title": "Diseño & Prototipado",
+      "title": "Diseño y Prototipado",
       "description": "Trabajamos contigo para crear el envase perfecto. Renderizado 3D e impresión 3D para validar antes de producir."
     },
     {
       "step": 2,
-      "title": "Inyección & Moldeo",
+      "title": "Inyección y Moldeo, Extrusión y Soplado",
       "description": "Producción con moldes de alta precisión y maquinaria de última generación para piezas uniformes."
     },
     {
       "step": 3,
-      "title": "Extrusión & Soplado",
-      "description": "Procesos versátiles de extrusión y soplado para botellas y envases flexibles de alta calidad."
-    },
-    {
-      "step": 4,
-      "title": "Acabado & Entrega",
+      "title": "Acabado y Entrega",
       "description": "Impresión decorativa, serigrafía, metallizado y control de calidad riguroso antes de la entrega."
     }
   ],

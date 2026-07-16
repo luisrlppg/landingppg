@@ -4,7 +4,7 @@ import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
 ---
 
-<section id="faq" class="relative py-32 overflow-hidden">
+<section id="faq" class="relative py-16 md:py-32 overflow-hidden">
   <GridBackground />
 
   <div class="section-container relative z-10">
@@ -13,12 +13,15 @@ import GridBackground from './ui/GridBackground.astro';
       subtitle="Resolvemos tus dudas sobre nuestros productos y servicios."
     />
 
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-3xl mx-auto" role="list">
       {content.faq.map((item, i) => (
-        <div class="border-b border-zinc-800/50">
+        <div class="border-b border-zinc-800/50" data-aos="fade-up" data-aos-delay={String(i * 80)} role="listitem">
           <button
             class="faq-toggle w-full flex items-center justify-between py-6 text-left group"
             data-index={i}
+            aria-expanded="false"
+            aria-controls={`faq-answer-${i}`}
+            id={`faq-question-${i}`}
           >
             <span class="text-lg font-medium text-zinc-200 group-hover:text-white transition-colors pr-4">
               {item.question}
@@ -28,11 +31,12 @@ import GridBackground from './ui/GridBackground.astro';
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="faq-answer hidden pb-6">
+          <div class="faq-answer hidden pb-6" id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`}>
             <p class="text-zinc-400 text-sm leading-relaxed" set:html={item.answer}></p>
           </div>
         </div>
@@ -46,17 +50,22 @@ import GridBackground from './ui/GridBackground.astro';
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
       const icon = button.querySelector('svg');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
+      document.querySelectorAll('.faq-toggle').forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'false');
+      });
       document.querySelectorAll('.faq-answer').forEach((el) => {
-        if (el !== answer) el.classList.add('hidden');
+        el.classList.add('hidden');
       });
       document.querySelectorAll('.faq-toggle svg').forEach((svg) => {
-        if (svg !== icon) svg.style.transform = 'rotate(0deg)';
+        svg.style.transform = 'rotate(0deg)';
       });
 
-      answer?.classList.toggle('hidden');
-      if (icon) {
-        icon.style.transform = answer?.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      if (!isExpanded) {
+        button.setAttribute('aria-expanded', 'true');
+        answer?.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
       }
     });
   });

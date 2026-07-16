@@ -6,7 +6,7 @@ import GridBackground from './ui/GridBackground.astro';
 import Button from './ui/Button.astro';
 ---
 
-<section id="productos" class="relative py-32 overflow-hidden">
+<section id="productos" class="relative py-16 md:py-32 overflow-hidden">
   <GridBackground />
 
   <div class="section-container relative z-10">
@@ -16,12 +16,14 @@ import Button from './ui/Button.astro';
     />
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {content.products.map((product) => (
-        <GlowCard class="p-6 group">
+      {content.products.map((product, i) => (
+        <GlowCard class="p-6 group" data-aos="fade-up" data-aos-delay={String(i * 100)}>
           <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900/50 mb-4">
             <img
               src={product.image}
               alt={product.title}
+              width="640"
+              height="480"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
@@ -42,7 +44,7 @@ import Button from './ui/Button.astro';
     <div class="mt-16 text-center">
       <Button href="https://plasticosplasa.ventaenlinea.store" variant="primary" class="text-lg px-8 py-4">
         Escoge tus productos para tu cotización
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </Button>

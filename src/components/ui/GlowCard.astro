@@ -2,12 +2,21 @@
 interface Props {
   class?: string;
   hover?: boolean;
+  'data-aos'?: string;
+  'data-aos-delay'?: string;
+  'data-aos-duration'?: string;
 }
 
-const { class: className = '', hover = true } = Astro.props;
+const { class: className = '', hover = true, 'data-aos': aos, 'data-aos-delay': aosDelay, 'data-aos-duration': aosDuration } = Astro.props;
+
+const aosAttrs: Record<string, string> = {};
+if (aos) aosAttrs['data-aos'] = aos;
+if (aosDelay) aosAttrs['data-aos-delay'] = aosDelay;
+if (aosDuration) aosAttrs['data-aos-duration'] = aosDuration;
 ---
 
 <div
+  {...aosAttrs}
   class:list={[
     'relative rounded-card bg-surface/50 backdrop-blur-sm border-gradient',
     hover && 'transition-all duration-300 hover:bg-surface-light/50 hover:scale-[1.02]',
