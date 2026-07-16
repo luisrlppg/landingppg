@@ -8,7 +8,9 @@ Landing page corporativa para Plásticos Plasa, fabricante de envases cosmético
 |---|---|
 | Framework | [Astro 5](https://astro.build/) |
 | Estilos | [Tailwind CSS v3](https://tailwindcss.com/) |
+| Animaciones | [AOS 2.3.4](https://michalsnik.github.io/aos/) (Animate On Scroll) |
 | Despliegue | Docker + nginx |
+| Proxy | Cloudflare Zero Trust Tunnel |
 | Git | GitHub: [luisrlppg/landingppg](https://github.com/luisrlppg/landingppg) |
 
 ## Requisitos
@@ -51,29 +53,32 @@ landing/
 │   │   ├── Products.astro            # Grid de productos con imágenes + CTA venta en línea
 │   │   ├── SocialProof.astro         # "Marcas que confían en nosotros" con logos
 │   │   ├── About.astro               # Sobre nosotros + estadísticas (50+ años)
-│   │   ├── Process.astro             # Proceso de fabricación (4 pasos)
+│   │   ├── Process.astro             # Proceso de fabricación (3 pasos)
 │   │   ├── Testimonials.astro        # Testimonios de clientes
-│   │   ├── FAQ.astro                 # Preguntas frecuentes (accordion) + link catálogo
+│   │   ├── FAQ.astro                 # Preguntas frecuentes (accordion ARIA) + link catálogo
 │   │   ├── Contact.astro             # Formulario + datos de contacto
 │   │   ├── WhatsAppButton.astro      # Botón flotante de WhatsApp
 │   │   ├── Footer.astro              # Pie de página + año dinámico + Instagram
 │   │   └── ui/                       # Componentes reutilizables
-│   │       ├── GlowCard.astro        # Tarjeta con borde gradiente
+│   │       ├── GlowCard.astro        # Tarjeta con borde gradiente + soporte AOS
 │   │       ├── Button.astro          # Botones primary/secondary + links externos
 │   │       ├── GridBackground.astro  # Patrón de cuadrícula sutil
-│   │       └── SectionHeader.astro   # Título de sección reutilizable
+│   │       └── SectionHeader.astro   # Título de sección reutilizable + AOS
 │   ├── layouts/
-│   │   └── Layout.astro              # HTML base + meta tags + favicon
+│   │   └── Layout.astro              # HTML base + meta tags + JSON-LD + AOS init
 │   ├── pages/
 │   │   └── index.astro               # Página principal (ensambla todo)
 │   └── styles/
-│       └── global.css                # Tailwind + efectos custom
+│       └── global.css                # Tailwind + efectos custom + prefers-reduced-motion
 ├── public/
 │   ├── ppg.jpg                       # Logo de la empresa
-│   └── images/                       # Imágenes de productos
-├── Dockerfile                        # Multi-stage build (Node → nginx)
-├── nginx.conf                        # Configuración nginx
+│   ├── images/                       # Imágenes de productos y planta
+│   ├── robots.txt                    # Directivas para crawlers
+│   └── sitemap.xml                   # Sitemap XML para Google
+├── Dockerfile                        # Multi-stage build (Node → nginx) con rm -rf dist
+├── nginx.conf                        # Configuración nginx (cache, gzip, headers)
 ├── docker-compose.yml                # Deploy en puerto 3000
+├── .dockerignore                     # Excluye node_modules, dist, .git
 ├── astro.config.mjs                  # Configuración de Astro
 ├── tailwind.config.js                # Configuración de Tailwind (colores)
 ├── postcss.config.js                 # PostCSS config
@@ -117,6 +122,7 @@ src/data/content.json
 
 > Las imágenes se colocan en `public/images/` y se referencian con ruta absoluta `/images/`.
 > Se recomienda que las fotos tengan aspect ratio **4:3 horizontal** y estén recortadas con el producto centrado.
+> Las URLs de imágenes incluyen un timestamp de build automáticamente (`?v=...`) para evitar problemas de cache.
 
 ### Modificar testimonios
 
@@ -171,6 +177,76 @@ src/data/content.json
 | WhatsApp flotante | [wa.me/523343292726](https://wa.me/523343292726) | Botón flotante abajo-derecha |
 | Catálogo en FAQ | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Respuesta FAQ |
 
+## Animaciones (AOS)
+
+Todas las secciones usan animaciones de entrada con [AOS](https://michalsnik.github.io/aos/):
+
+| Sección | Animación | Delay |
+|---|---|---|
+| Products cards | `fade-up` | 0ms, 100ms, 200ms (staggered) |
+| About (texto) | `fade-right` | 0ms |
+| About (features) | `fade-up` | 100ms, 200ms, 300ms |
+| About (stats) | `fade-up` | 400ms, 500ms, 600ms, 700ms |
+| About (imagen) | `fade-left` | 200ms |
+| Process cards | `fade-up` | 0ms, 100ms, 200ms |
+| Testimonials cards | `fade-up` | 0ms, 100ms, 200ms |
+| FAQ items | `fade-up` | 0ms, 100ms, 200ms |
+| Contact form | `fade-up` | 0ms |
+| Contact info | `fade-right` | 0ms |
+| WhatsApp button | `zoom-in` | 0ms |
+
+**Configuración global** (en `Layout.astro`):
+```js
+AOS.init({
+  duration: 600,
+  easing: 'ease-out-cubic',
+  once: true,    // solo se anima una vez
+  offset: 80,
+});
+```
+
+### Soporte para reduced motion
+
+Los usuarios con preferencia de movimiento reducido tienen desactivadas todas las animaciones y transiciones automáticamente via `prefers-reduced-motion` en `global.css`.
+
+## SEO
+
+### Meta tags
+
+- **Title**: configurable por página
+- **Description**: de `content.json`
+- **Canonical URL**: `https://plasticosplasa.net/`
+- **Open Graph**: título, descripción, imagen, tipo, URL, locale
+- **Twitter Card**: `summary_large_image`
+
+### JSON-LD (Structured Data)
+
+Tres schemas implementados:
+
+1. **WebSite** — Información del sitio
+2. **LocalBusiness** — Datos del negocio (dirección, teléfono, horario, coordenadas)
+3. **FAQPage** — Preguntas frecuentes para rich results en Google
+
+### Archivos SEO
+
+- `public/robots.txt` — Directivas para crawlers (`Allow: /`)
+- `public/sitemap.xml` — Sitemap XML con la URL principal
+
+## Accesibilidad (a11y)
+
+- **Navegación semántica**: `<ul>` + `<li>` en el nav del header (desktop y mobile)
+- **FAQ accordion**: `aria-expanded`, `aria-controls`, `aria-labelledby`, `role="region"`
+- **Links Instagram**: `aria-label` descriptivo
+- **SVGs decorativos**: `aria-hidden="true"` en todos los iconos decorativos
+- **Imágenes**: `alt` descriptivo en todas las imágenes
+
+## Performance
+
+- **Google Fonts**: Cargado via `<link>` en `<head>` con `preconnect` (no CSS @import)
+- **Imágenes**: Todos los `<img>` tienen atributos `width` y `height` definidos
+- **AOS**: Se inicializa con `once: true` para no re-animar al hacer scroll
+- **Gzip**: Compresión habilitada para texto, CSS, JS, JSON, XML, SVG
+
 ## Paleta de colores
 
 El color de acento se define en **un solo lugar** y se propaga a toda la landing:
@@ -222,11 +298,17 @@ docker run -d -p 3000:80 --restart unless-stopped --name landing-ppg landing-ppg
 docker logs -f landing-ppg
 
 # Reconstruir después de cambios
-docker compose up -d --build
+docker compose down
+docker compose build --no-cache
+docker compose up -d
 
 # Detener
 docker compose down
 ```
+
+### Nota sobre el build en Docker
+
+El Dockerfile ejecuta `rm -rf dist && npm run build` para asegurar que el directorio `dist/` siempre se genere limpio desde `public/`. Esto previene que una versión anterior de `dist/` quede embebida en la imagen Docker por cache de capas.
 
 ## Deploy en el servidor (medusa)
 
@@ -236,6 +318,42 @@ El servidor ya tiene otros servicios corriendo. Puertos en uso:
 - **5000, 5001, 8069, 8070**: Odoo
 - **8080**: nginx alternativo (intranet)
 - **3000**: Landing PPG (asignado)
+
+### Proceso de deploy completo
+
+```bash
+# 1. En local: commitear y pushear
+git add -A
+git commit -m "feat: descripción del cambio"
+git push origin main
+
+# 2. En el servidor (medusa):
+cd ~/Documents/landingppg
+git pull origin main
+docker compose down
+docker compose build --no-cache
+docker compose up -d
+```
+
+### Cloudflare Zero Trust Tunnel
+
+El sitio está expuesto a través de un Cloudflare Zero Trust Tunnel. Las imágenes y assets estáticos pueden quedar cacheados en el edge de Cloudflare.
+
+**Cache busting automático**: Las URLs de imágenes incluyen un timestamp de build (`?v=<Date.now()>`). Cada build genera URLs únicas, forzando a Cloudflare a servir la versión más reciente sin necesidad de purgar cache manualmente.
+
+**Si aun así se ven imágenes viejas** (raro, pero posible):
+1. Ir al panel de Cloudflare → **Caché** → **Purgar todo**
+2. O purgar por URL específica
+
+### nginx.conf — Headers de cache
+
+| Tipo de archivo | Cache | Header |
+|---|---|---|
+| Imágenes (jpg, png, gif, svg, webp) | must-revalidate | `Cache-Control "public, must-revalidate"` |
+| CSS/JS | 1 año | `Cache-Control "public, immutable"` |
+| Fuentes (woff, ttf) | 1 año | `Cache-Control "public, immutable"` |
+
+Las imágenes usan `must-revalidate` en lugar de `expires 30d` para que el navegador siempre verifique con el servidor si hay una versión más reciente (combinado con el cache busting por query param).
 
 ## Personalización
 
@@ -249,7 +367,7 @@ El servidor ya tiene otros servicios corriendo. Puertos en uso:
 Reemplazar `public/ppg.jpg` y actualizar referencias en:
 - `src/components/Header.astro`
 - `src/components/Footer.astro`
-- `src/layouts/Layout.astro` (favicon)
+- `src/layouts/Layout.astro` (favicon, og:image, twitter:image, JSON-LD)
 
 ### Añadir una nueva sección
 
@@ -259,7 +377,7 @@ Reemplazar `public/ppg.jpg` y actualizar referencias en:
 
 ### Cambiar tipografía
 
-1. Actualizar el import de Google Fonts en `global.css`
+1. Actualizar el import de Google Fonts en `Layout.astro` (`<link href="...">`)
 2. Cambiar `fontFamily.sans` en `tailwind.config.js`
 
 ## Git / GitHub
@@ -300,3 +418,5 @@ git push
 - Los colores usan el token `accent` de Tailwind — cambiar en el config propaga a todos los componentes
 - El componente `Button.astro` detecta URLs externas y abre en nueva pestaña automáticamente
 - El FAQ soporta HTML en las respuestas (usa `set:html`)
+- Las imágenes de `public/images/` se cache bustean automáticamente con `?v=<timestamp>` en Products.astro y About.astro
+- El componente `GlowCard.astro` acepta props de AOS (`data-aos`, `data-aos-delay`, `data-aos-duration`) para passthrough
