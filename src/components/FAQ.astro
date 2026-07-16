@@ -4,7 +4,7 @@ import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
 ---
 
-<section id="faq" class="relative py-16 md:py-32 overflow-hidden">
+<section id="faq" class="relative py-16 md:py-32">
   <GridBackground />
 
   <div class="section-container relative z-10">
@@ -17,7 +17,7 @@ import GridBackground from './ui/GridBackground.astro';
       {content.faq.map((item, i) => (
         <div class="border-b border-zinc-800/50" data-aos="fade-up" data-aos-delay={String(i * 80)} role="listitem">
           <button
-            class="faq-toggle w-full flex items-center justify-between py-6 text-left group"
+            class="faq-toggle w-full flex items-center justify-between py-5 text-left group"
             data-index={i}
             aria-expanded="false"
             aria-controls={`faq-answer-${i}`}
@@ -27,7 +27,7 @@ import GridBackground from './ui/GridBackground.astro';
               {item.question}
             </span>
             <svg
-              class="w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"
+              class="w-6 h-6 text-zinc-500 shrink-0 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

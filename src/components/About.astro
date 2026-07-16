@@ -5,7 +5,7 @@ import GridBackground from './ui/GridBackground.astro';
 const v = Date.now();
 ---
 
-<section id="nosotros" class="relative py-16 md:py-32 overflow-hidden">
+<section id="nosotros" class="relative py-16 md:py-32">
   <GridBackground />
 
   <div class="glow-blob w-[500px] h-[500px] bg-accent/10 top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 animate-glow-pulse" />
@@ -21,9 +21,9 @@ const v = Date.now();
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6 md:mb-10">
           {content.about.features.map((feature, i) => (
-            <div class="rounded-card bg-surface/30 border border-zinc-800/50 p-4" data-aos="fade-up" data-aos-delay={String((i + 1) * 100)}>
-              <h4 class="text-sm font-semibold text-accent mb-1">{feature.title}</h4>
-              <p class="text-xs text-zinc-500 leading-relaxed">{feature.description}</p>
+            <div class="rounded-card bg-surface/30 border border-zinc-800/50 p-4 sm:p-5" data-aos="fade-up" data-aos-delay={String((i + 1) * 100)}>
+              <h4 class="text-sm md:text-base font-semibold text-accent mb-1">{feature.title}</h4>
+              <p class="text-xs sm:text-sm text-zinc-500 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

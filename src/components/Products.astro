@@ -7,7 +7,7 @@ import Button from './ui/Button.astro';
 const v = Date.now();
 ---
 
-<section id="productos" class="relative py-16 md:py-32 overflow-hidden">
+<section id="productos" class="relative py-16 md:py-32">
   <GridBackground />
 
   <div class="section-container relative z-10">
@@ -34,9 +34,9 @@ const v = Date.now();
           <p class="text-zinc-400 text-sm leading-relaxed">{product.description}</p>
 
           <div class="mt-4 pt-4 border-t border-zinc-800/50">
-            <span class="text-accent text-sm font-medium group-hover:underline cursor-pointer">
+            <a href="https://plasticosplasa.ventaenlinea.store" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium group-hover:underline">
               Ver opciones →
-            </span>
+            </a>
           </div>
         </GlowCard>
       ))}

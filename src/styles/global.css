@@ -11,7 +11,15 @@
 
   body {
     @apply bg-black text-zinc-50 font-sans;
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  input, textarea, select {
+    @apply text-base;
+  }
+
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
@@ -22,7 +30,7 @@
 @layer components {
   .glow-blob {
     @apply absolute rounded-full blur-[120px] pointer-events-none;
-    will-change: transform, opacity;
+    touch-action: none;
   }
 
   .border-gradient {

@@ -36,7 +36,7 @@ import Button from './ui/Button.astro';
 
       <button
         id="mobile-toggle"
-        class="md:hidden p-2 text-zinc-400 hover:text-white"
+        class="md:hidden p-3 text-zinc-400 hover:text-white"
         aria-label="Menú"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -48,12 +48,12 @@ import Button from './ui/Button.astro';
 
   <div id="mobile-menu" class="hidden md:hidden bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800/50">
     <div class="section-container py-4 flex flex-col gap-3">
-      <ul class="flex flex-col gap-3">
+      <ul class="flex flex-col gap-1">
         {content.nav.map((item) => (
           <li>
             <a
               href={item.href}
-              class="text-sm text-zinc-400 hover:text-white py-2 transition-colors"
+              class="text-base text-zinc-400 hover:text-white py-3.5 transition-colors"
             >
               {item.label}
             </a>
