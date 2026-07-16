@@ -4,6 +4,7 @@ import GlowCard from './ui/GlowCard.astro';
 import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
 import Button from './ui/Button.astro';
+const v = Date.now();
 ---
 
 <section id="productos" class="relative py-16 md:py-32 overflow-hidden">
@@ -20,7 +21,7 @@ import Button from './ui/Button.astro';
         <GlowCard class="p-6 group" data-aos="fade-up" data-aos-delay={String(i * 100)}>
           <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900/50 mb-4">
             <img
-              src={product.image}
+              src={`${product.image}?v=${v}`}
               alt={product.title}
               width="640"
               height="480"

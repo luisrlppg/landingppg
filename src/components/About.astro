@@ -2,6 +2,7 @@
 import content from '../data/content.json';
 import SectionHeader from './ui/SectionHeader.astro';
 import GridBackground from './ui/GridBackground.astro';
+const v = Date.now();
 ---
 
 <section id="nosotros" class="relative py-16 md:py-32 overflow-hidden">
@@ -40,7 +41,7 @@ import GridBackground from './ui/GridBackground.astro';
       <div class="relative" data-aos="fade-left" data-aos-delay="200">
         <div class="aspect-[4/3] rounded-card bg-surface border-gradient overflow-hidden">
           <img
-            src="/images/placeholder-planta.png"
+            src={`/images/placeholder-planta.png?v=${v}`}
             alt="Planta de producción en Guadalajara"
             width="800"
             height="600"
