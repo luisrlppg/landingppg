@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN rm -rf dist && npm run build
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
