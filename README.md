@@ -48,10 +48,9 @@ landing/
 │   ├── data/
 │   │   └── content.json              # Todo el contenido editable
 │   ├── components/
-│   │   ├── Header.astro              # Nav sticky + logo + Instagram + mobile menu
+│   │   ├── Header.astro              # Nav sticky + hamburger left (móvil) + cotizar right + mobile menu
 │   │   ├── Hero.astro                # Sección principal con glows + CTA catálogo
-│   │   ├── Products.astro            # Grid de productos con imágenes + CTA venta en línea
-│   │   ├── SocialProof.astro         # "Marcas que confían en nosotros" con logos
+│   │   ├── Products.astro            # Grid de productos con imágenes + links "Ver opciones" a ventaenlínea
 │   │   ├── About.astro               # Sobre nosotros + estadísticas (50+ años)
 │   │   ├── Process.astro             # Proceso de fabricación (3 pasos)
 │   │   ├── Testimonials.astro        # Testimonios de clientes
@@ -61,7 +60,7 @@ landing/
 │   │   ├── Footer.astro              # Pie de página + año dinámico + Instagram
 │   │   └── ui/                       # Componentes reutilizables
 │   │       ├── GlowCard.astro        # Tarjeta con borde gradiente + soporte AOS
-│   │       ├── Button.astro          # Botones primary/secondary + links externos
+│   │       ├── Button.astro          # Botones primary/secondary + links externos + min-h-[48px] touch target
 │   │       ├── GridBackground.astro  # Patrón de cuadrícula sutil
 │   │       └── SectionHeader.astro   # Título de sección reutilizable + AOS
 │   ├── layouts/
@@ -69,7 +68,7 @@ landing/
 │   ├── pages/
 │   │   └── index.astro               # Página principal (ensambla todo)
 │   └── styles/
-│       └── global.css                # Tailwind + efectos custom + prefers-reduced-motion
+│       └── global.css                # Tailwind + efectos custom + prefers-reduced-motion + iOS touch fixes
 ├── public/
 │   ├── ppg.jpg                       # Logo de la empresa
 │   ├── images/                       # Imágenes de productos y planta
@@ -170,10 +169,12 @@ src/data/content.json
 
 | Botón | Destino | Ubicación |
 |---|---|---|
-| "Cotizar ahora" | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Header nav |
+| "Cotizar ahora" | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Header nav (desktop) + mobile |
+| "Cotizar" (móvil) | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Header mobile right |
 | "Conoce nuestros productos" | Sección #productos | Hero |
 | "Escoge tus productos para tu cotización" | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Debajo del grid de productos |
-| Instagram | [instagram.com/plasticosplasa](https://instagram.com/plasticosplasa) | Header + Footer |
+| "Ver opciones" (×6 productos) | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Cada card de producto |
+| Instagram | [instagram.com/plasticosplasa](https://instagram.com/plasticosplasa) | Header (desktop) + Footer |
 | WhatsApp flotante | [wa.me/523343292726](https://wa.me/523343292726) | Botón flotante abajo-derecha |
 | Catálogo en FAQ | [plasticosplasa.ventaenlinea.store](https://plasticosplasa.ventaenlinea.store) | Respuesta FAQ |
 
@@ -239,6 +240,9 @@ Tres schemas implementados:
 - **Links Instagram**: `aria-label` descriptivo
 - **SVGs decorativos**: `aria-hidden="true"` en todos los iconos decorativos
 - **Imágenes**: `alt` descriptivo en todas las imágenes
+- **Touch targets**: Botones con `min-h-[48px]` para cumplir estándar de accesibilidad móvil (44×44px mínimo)
+- **iOS input zoom**: Inputs y textarea con `font-size: 16px` para prevenir zoom automático en iOS Safari
+- **Tap highlight**: `-webkit-tap-highlight-color: transparent` para feedback táctil limpio
 
 ## Performance
 
@@ -246,6 +250,7 @@ Tres schemas implementados:
 - **Imágenes**: Todos los `<img>` tienen atributos `width` y `height` definidos
 - **AOS**: Se inicializa con `once: true` para no re-animar al hacer scroll
 - **Gzip**: Compresión habilitada para texto, CSS, JS, JSON, XML, SVG
+- **Mobile UX**: Touch targets mínimos de 48px, overflow hidden en secciones con glow blobs para prevenir scroll horizontal, `touch-action: none` en blobs decorativos
 
 ## Paleta de colores
 
@@ -420,3 +425,8 @@ git push
 - El FAQ soporta HTML en las respuestas (usa `set:html`)
 - Las imágenes de `public/images/` se cache bustean automáticamente con `?v=<timestamp>` en Products.astro y About.astro
 - El componente `GlowCard.astro` acepta props de AOS (`data-aos`, `data-aos-delay`, `data-aos-duration`) para passthrough
+- **Mobile**: Las secciones con glow blobs (About, Testimonials, Contact, Hero) necesitan `overflow-hidden` para prevenir scroll horizontal en móvil. No quitar sin evaluar impacto.
+- **Touch targets**: Botones usan `min-h-[48px]` en `Button.astro`. Mantener este mínimo para accesibilidad móvil.
+- **iOS**: No usar `overflow-x: clip` en `<body>` — causa que los botones no respondan a touch en iOS Safari. Usar `overflow-x: hidden`.
+- **Header mobile**: Layout `[hamburger] [logo] [flex spacer] [cotizar]`. El `flex-1` spacer empuja hamburger a izquierda y cotizar a derecha.
+- **Instagram icon**: Usar SVG stroke-based (Feather Icons), no fill-based path — el path complexo con `fill="currentColor"` no renderiza correctamente en algunos navegadores.
